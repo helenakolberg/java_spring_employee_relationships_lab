@@ -15,7 +15,7 @@ public class Department {
     @Column(name = "name")
     private String name;
 
-    
+
     private List<Employee> employees;
 
     public Department(String name) {

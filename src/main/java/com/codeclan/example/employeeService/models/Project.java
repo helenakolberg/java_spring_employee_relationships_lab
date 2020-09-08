@@ -17,7 +17,7 @@ public class Project {
 
     @Column(name = "duration")
     private int duration;
-    
+
     private List<Employee> employees;
 
     public Project(String name, int duration) {

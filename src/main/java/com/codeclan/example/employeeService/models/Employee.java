@@ -23,11 +23,14 @@ public class Employee {
 
     private List<Project> projects;
 
-    public Employee(String firstName, String lastName, String number) {
+    private Department department;
+
+    public Employee(String firstName, String lastName, String number, Department department) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.number = number;
         this.projects = new ArrayList<Project>();
+        this.department = department;
     }
 
     public Employee() {
@@ -71,5 +74,13 @@ public class Employee {
 
     public void setProjects(List<Project> projects) {
         this.projects = projects;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }

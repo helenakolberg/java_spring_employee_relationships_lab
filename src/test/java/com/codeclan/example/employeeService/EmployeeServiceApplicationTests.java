@@ -2,6 +2,7 @@ package com.codeclan.example.employeeService;
 
 import com.codeclan.example.employeeService.models.Department;
 import com.codeclan.example.employeeService.models.Employee;
+import com.codeclan.example.employeeService.models.Project;
 import com.codeclan.example.employeeService.repositories.DepartmentRepository;
 import com.codeclan.example.employeeService.repositories.EmployeeRepository;
 import com.codeclan.example.employeeService.repositories.ProjectRepository;
@@ -35,6 +36,24 @@ class EmployeeServiceApplicationTests {
 
 		Employee employee = new Employee("Sky", "Su", "E41I", department);
 		employeeRepository.save(employee);
+	}
+
+	@Test
+	public void addEmployeesAndProject() {
+		Department department = new Department("Technology");
+		departmentRepository.save(department);
+
+		Employee employee = new Employee("Sky", "Su", "E41I", department);
+		employeeRepository.save(employee);
+
+		Project project = new Project("New app", 14);
+		projectRepository.save(project);
+
+		project.addEmployee(employee);
+		projectRepository.save(project);
+
+		department.addEmployee(employee);
+		departmentRepository.save(department);
 	}
 
 }
